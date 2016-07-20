@@ -1,0 +1,2 @@
+blogApp
+.constant('api', '/api/');

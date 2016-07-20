@@ -1,0 +1,16 @@
+<div class="uk-panel-box">
+    <p class="uk-article-meta">Posted on {{ post.created_at.date | date }} in
+    	<span ng-if="post.terms.category">
+    		<a href="category/{{ categorySlug }}"
+    			ng-repeat="(categorySlug, categoryName) in post.terms.category">
+    			{{ categoryName }}
+    		</a>
+    	</span>
+    </p>
+
+    <p class="uk-article-meta" ng-if="post.terms.tag">Tagged:
+    	<a href="tag/{{ termSlug }}"
+    		ng-repeat="(termSlug, termName) in post.terms.tag">
+    		{{ termName }},</a>
+    </p>
+</div>

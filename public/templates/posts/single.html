@@ -1,0 +1,14 @@
+<article class="uk-article uk-border-rounded">
+    <img src="{{ post.image }}" alt="{{ post.title }}">
+	<div class="uk-panel-box uk-block-default">
+
+	    <h2 class="uk-article-title uk-text-primary">
+	        {{ post.title }}
+	    </h2>
+
+	    <div id="post-content" ng-bind-html="post.content"></div>
+
+	</div>
+
+	<ng-include src="'templates/posts/meta.html'"></ng-include>
+</article>
