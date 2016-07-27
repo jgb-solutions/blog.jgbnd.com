@@ -1,16 +1,17 @@
 blogApp
-.controller('PostsController', ['$scope', 'wp', 'blog', function($scope, wp, blog) {
-	$scope.title = ('All the posts');
+.controller('PostsController', [
+	'$scope', 'wp', 'blog', '$routeParams',
+	function($scope, wp, blog, $routeParams) {
+		let page = $routeParams.page;
+		$scope.title = ('All the posts' + blog.getPagedTitle( page ));
 
-	blog.setTitle($scope.title);
+		blog.setTitle($scope.title);
 
-	wp.getPosts()
-		.then(function( response ) {
-			// on success
-			console.log(response);
-			$scope.posts = response.data.data;
-		}, function( error ) {
-			// on error
-			console.log( error );
-		});
+		wp.getPosts( page )
+			.then(function( response ) {
+				blog.setPostsAndPaginate(response, $scope);
+			}, function( error ) {
+				// on error
+				console.log( error );
+			});
 }]);

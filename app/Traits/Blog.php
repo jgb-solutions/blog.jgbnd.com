@@ -28,4 +28,9 @@ trait Blog
     {
         return $query->where('count', '>', 0);
     }
+
+    // public function getImagesAttribute()
+    // {
+    //     return $this->attachment[0]->meta[1]->value;
+    // }
 }

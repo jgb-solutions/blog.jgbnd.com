@@ -9,17 +9,17 @@ blogApp
 			// let page = page || null;
 			return $http.get(api + 'posts?page=' + page);
 		},
-		getPost: function(postID) {
-			return $http.get(api + 'posts/' + postID);
+		getPost: function(postName) {
+			return $http.get(api + 'post/' + postName);
 		},
 		getCategoriesAndTags: function() {
 			return $http.get(api + 'cattags');
 		},
-		getPostsByCategory: function(categoryName) {
-			return $http.get(api + 'category/' + categoryName);
+		getPostsByCategory: function(categoryName, page) {
+			return $http.get(api + 'category/' + categoryName  + '?page=' + page);
 		},
-		getPostsByTag: function(tagName) {
-			return $http.get(api + 'tag/' + tagName);
+		getPostsByTag: function(tagName, page) {
+			return $http.get(api + 'tag/' + tagName + '?page=' + page);
 		}
 	};
 }]);

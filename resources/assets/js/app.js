@@ -1,6 +1,7 @@
 var blogApp = angular.module('blogApp', [
 	'ngRoute', 'ngSanitize',
-	'chieffancypants.loadingBar'
+	'chieffancypants.loadingBar',
+	'angularMoment'
 ])
 
 .config(['$routeProvider', '$locationProvider', '$httpProvider', 'cfpLoadingBarProvider',
@@ -17,19 +18,19 @@ var blogApp = angular.module('blogApp', [
 				controller: 'HomeController',
 				templateUrl: 'templates/home.html'
 			})
-			.when('/posts', {
+			.when('/posts/:page?', {
 				controller: 'PostsController',
 				templateUrl: 'templates/posts.html'
 			})
-			.when('/posts/:id', {
+			.when('/post/:name', {
 				controller: 'SinglePostController',
 				templateUrl: 'templates/posts/single.html'
 			})
-			.when('/category/:category', {
+			.when('/category/:category/:page?', {
 				controller: 'CategoryController',
 				templateUrl: 'templates/posts/category.html'
 			})
-			.when('/tag/:tag', {
+			.when('/tag/:tag/:page?', {
 				controller: 'TagController',
 				templateUrl: 'templates/posts/tag.html'
 			})

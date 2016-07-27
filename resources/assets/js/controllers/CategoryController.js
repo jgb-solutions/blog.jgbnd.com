@@ -1,21 +1,17 @@
 blogApp
 .controller('CategoryController', [
-	'$scope', 'wp', 'blog', '$routeParams', function($scope, wp, blog, $routeParams) {
-	$scope.title = ('All posts in: ' + $routeParams.category);
+	'$scope', 'wp', 'blog', '$routeParams',
+	function($scope, wp, blog, $routeParams) {
+		let page = $routeParams.page;
+		$scope.title = ('All posts in the category: <strong>' + $routeParams.category + '</strong>' + blog.getPagedTitle( page ));
 
-	blog.setTitle($scope.title);
+		blog.setTitle( $scope.title );
 
-	wp.getPostsByCategory( $routeParams.category )
-		.then(function( response ) {
-			// on success
-			console.log(response);
-			$scope.posts = response.data.data;
-		}, function( error ) {
-			// on error
-			console.log( error );
-		});
-
-	$scope.canPaginate = function() {
-		return false;
-	};
+		wp.getPostsByCategory( $routeParams.category, page)
+			.then(function( response ) {
+				blog.setPostsAndPaginate(response, $scope);
+			}, function( error ) {
+				// on error
+				console.log( error );
+			});
 }]);

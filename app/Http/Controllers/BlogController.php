@@ -6,6 +6,8 @@ use App\Models\Category;
 use App\Models\Tag;
 use App\Models\Post;
 
+use Cache;
+
 class BlogController extends Controller
 {
 	public function getIndex()
@@ -38,10 +40,21 @@ class BlogController extends Controller
 
 	public function getPostByName($name)
 	{
-		return Post::published()
-			->byName($name)
-			->firstOrFail()
-			->makeVisible('content');
+		return Cache::get($name, function() use ($name) {
+			$post = Post::published()
+				->byName($name)
+				->firstOrFail()
+				->makeVisible('content');
+
+			Cache::put($name, $post, 2);
+
+			return $post;
+		});
+	}
+
+	public function getSinglePost($id, $name)
+	{
+		return Post::find($id);
 	}
 
 	public function getPostsbyTag($tagName)

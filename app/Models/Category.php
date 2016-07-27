@@ -11,5 +11,5 @@ class Category extends TermTaxonomy
 
     protected $taxonomy = 'category';
 
-    protected $visible = ['term'];
+    protected $visible = ['term', 'count'];
 }

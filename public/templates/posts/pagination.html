@@ -1,12 +1,12 @@
 <div class="uk-grid uk-grid-margin">
-	<div class="uk-width-1-2 uk-text-left">
-		<button class="uk-button uk-button-primary">
+	<div class="uk-width-1-2 uk-text-left" >
+		<a class="uk-button uk-button-primary" ng-if="previousPageUrl" href="{{previousPageUrl}}">
 			<i class="uk-icon-angle-double-left"></i> Previous posts
-		</button>
+		</a>
 	</div>
 	<div class="uk-width-1-2 uk-text-right">
-		<button class="uk-button uk-button-primary">
+		<a class="uk-button uk-button-primary" ng-if="nextPageUrl" href="{{nextPageUrl}}">
 			Next posts <i class="uk-icon-angle-double-right"></i>
-		</button>
+		</a>
 	</div>
 </div>

@@ -6159,6 +6159,12 @@ img.logo {
   height: 50px;
   width: auto;
 }
+@media screen and (max-width: 394px) {
+  img.logo {
+    height: 40px;
+    margin-top: -4em;
+  }
+}
 article {
   box-shadow: 0 0 4px 2px;
 }
@@ -6170,6 +6176,10 @@ h3.uk-article-title {
   figure.uk-overlay {
     display: block;
   }
+}
+.box-meta {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 /*# sourceMappingURL=blog.css.map */

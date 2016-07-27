@@ -11,5 +11,5 @@ class Tag extends TermTaxonomy
 
     protected $taxonomy = 'post_tag';
 
-    protected $visible = ['term'];
+    protected $visible = ['term', 'count'];
 }

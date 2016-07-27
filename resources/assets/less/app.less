@@ -29,6 +29,13 @@ header.navbar, .uk-navbar {
 img.logo {
 	height: 50px;
 	width: auto;
+
+	@media screen and (max-width: 394px) {
+		& {
+			height: 40px;
+			margin-top: -4em;
+		}
+	}
 }
 
 article {
@@ -44,4 +51,9 @@ h3.uk-article-title {
 	figure.uk-overlay {
 		display: block;
 	}
+}
+
+.box-meta {
+	border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
