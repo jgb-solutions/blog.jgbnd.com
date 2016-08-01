@@ -6181,5 +6181,29 @@ h3.uk-article-title {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
+.btn-primary {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:hover {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+.btn-info {
+  color: #fff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+.btn-info:active,
+.btn-info:focus,
+.btn-info:hover {
+  color: #fff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
 
 /*# sourceMappingURL=blog.css.map */

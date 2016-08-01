@@ -1,25 +1,25 @@
 blogApp
-.factory('wp', ['$http', 'api', function($http, api){
+.factory('wp', ['$http', 'CONST', function($http, CONST){
 	return {
 		init: function() {
 			// let page = page || null;
-			return $http.get(api + 'init');
+			return $http.get(CONST.api + 'init');
 		},
 		getPosts: function( page ) {
 			// let page = page || null;
-			return $http.get(api + 'posts?page=' + page);
+			return $http.get(CONST.api + 'posts?page=' + page);
 		},
 		getPost: function(postName) {
-			return $http.get(api + 'post/' + postName);
+			return $http.get(CONST.api + 'post/' + postName);
 		},
 		getCategoriesAndTags: function() {
-			return $http.get(api + 'cattags');
+			return $http.get(CONST.api + 'cattags');
 		},
 		getPostsByCategory: function(categoryName, page) {
-			return $http.get(api + 'category/' + categoryName  + '?page=' + page);
+			return $http.get(CONST.api + 'category/' + categoryName  + '?page=' + page);
 		},
 		getPostsByTag: function(tagName, page) {
-			return $http.get(api + 'tag/' + tagName + '?page=' + page);
+			return $http.get(CONST.api + 'tag/' + tagName + '?page=' + page);
 		}
 	};
 }]);

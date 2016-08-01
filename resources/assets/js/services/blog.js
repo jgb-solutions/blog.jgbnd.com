@@ -3,8 +3,10 @@ blogApp
 	$rootScope.blog = {};
 
 	return {
-		setTitle: function(newTitle) {
+		setTitle: function(newTitle, showTitle) {
 			$rootScope.blog.title = newTitle + ' - JGB! Neat Design';
+			$rootScope.blog.h1 = newTitle;
+			$rootScope.blog.showTitle = showTitle;
 		},
 
 		setCategoriesAndTags: function() {
@@ -55,6 +57,10 @@ blogApp
 			$scope.posts = response.data.data;
 
 			this.paginate(response, $scope);
+		},
+
+		getImageSize: function(post, size) {
+			return post.images.sizes[size].file;
 		}
 	}
 }]);

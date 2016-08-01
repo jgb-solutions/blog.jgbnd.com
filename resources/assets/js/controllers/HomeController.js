@@ -8,7 +8,7 @@ blogApp
 		wp.init()
 			.then(function( response, status ) {
 				// on success
-				console.log(response);
+				// console.log(response);
 				$scope.posts = response.data;
 			}, function( error ) {
 				// on error

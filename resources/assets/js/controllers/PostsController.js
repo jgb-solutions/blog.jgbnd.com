@@ -3,6 +3,7 @@ blogApp
 	'$scope', 'wp', 'blog', '$routeParams',
 	function($scope, wp, blog, $routeParams) {
 		let page = $routeParams.page;
+
 		$scope.title = ('All the posts' + blog.getPagedTitle( page ));
 
 		blog.setTitle($scope.title);
