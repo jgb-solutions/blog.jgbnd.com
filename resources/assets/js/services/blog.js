@@ -40,9 +40,9 @@ blogApp
 		},
 
 		getRealAPIURL: function( apiURL ) {
-			if ( CONST.env !== 'local') {
-				apiURL.replace('http', 'https');
-			}
+			// if ( CONST.env !== 'local') {
+			// 	apiURL.replace('http', 'https');
+			// }
 
 			return apiURL.replace('/api', '').replace('?page=', '/');
 		},

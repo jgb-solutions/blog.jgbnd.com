@@ -1044,9 +1044,9 @@ blogApp
 		},
 
 		getRealAPIURL: function( apiURL ) {
-			if ( CONST.env !== 'local') {
-				apiURL.replace('http', 'https');
-			}
+			// if ( CONST.env !== 'local') {
+			// 	apiURL.replace('http', 'https');
+			// }
 
 			return apiURL.replace('/api', '').replace('?page=', '/');
 		},
@@ -1099,7 +1099,7 @@ blogApp
 .factory('CONST', function() {
 	return {
 		api: '/api/',
-		MEDIA_URL: $('meta[name=MEDIA_URL]').attr("content")
+		// env: $('meta[name=env]').attr("content")
 	}
 });
 //# sourceMappingURL=blog.js.map
