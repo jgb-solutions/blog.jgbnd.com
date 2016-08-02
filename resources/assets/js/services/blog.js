@@ -1,5 +1,5 @@
 blogApp
-.factory('blog', ['$rootScope', 'wp', function($rootScope, wp) {
+.factory('blog', ['$rootScope', 'wp', 'CONST', function($rootScope, wp, CONST) {
 	$rootScope.blog = {};
 
 	return {
@@ -40,6 +40,10 @@ blogApp
 		},
 
 		getRealAPIURL: function( apiURL ) {
+			if ( CONST.env !== 'local') {
+				apiURL.replace('http', 'https');
+			}
+
 			return apiURL.replace('/api', '').replace('?page=', '/');
 		},
 

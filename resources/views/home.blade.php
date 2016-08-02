@@ -6,6 +6,7 @@
 	<title ng-bind-html="blog.title"></title>
     	<meta name="viewport" content="width=device-width, initial-scale=1">
    	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+   	<meta name="env" content="{{ env('APP_ENV') }}">
 	<link rel="stylesheet" type="text/css" href="css/blog.css">
 	<script src="js/blog.js"></script>
 

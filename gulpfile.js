@@ -45,5 +45,5 @@ elixir(function(mix) {
             // 'filters/blog.js',
         ], 'public/js/blog.js')
 
-        // .version(['css/app.css', 'js/all.js'])
+        // .version(['css/blog.css', 'js/blog.js'])
 });
