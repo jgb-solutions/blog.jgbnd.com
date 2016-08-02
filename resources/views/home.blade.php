@@ -39,7 +39,7 @@
 	<div class="uk-block">
 		<div class="uk-container uk-container-center">
         	<div class="uk-width-medium-3-4 uk-container-center">
-        		<div ng-if="! blog.showTitle">
+        		<div ng-show="! blog.showTitle">
 	        		<h1 class="uk-text-center" ng-bind-html="blog.h1"></h1>
 	        		<hr class="uk-article-divider">
         		</div>
