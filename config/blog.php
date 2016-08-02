@@ -2,8 +2,7 @@
 
 return [
 	'name' => 'JGB! Neat Design',
-	'description' => 'Web & Mobile Development services',
-	'url' => 'http://jgbnd.com.dev',
+	'description' => 'Web & Mobile Development Blog',
    	'twitter' => 'https://twitter.com/jgbneatdesign',
    	'facebook' => 'https://www.facebook.com/jgbnddotcom',
    	'github' => 'https://github.com/jgbneatdesign',

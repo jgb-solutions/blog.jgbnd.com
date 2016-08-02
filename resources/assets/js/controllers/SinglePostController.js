@@ -5,8 +5,9 @@ blogApp
 
 		wp.getPost($routeParams.name)
 			.then(function( response ) {
-				$scope.title = (response.data.title);
+				$scope.title = response.data.title;
 				blog.setTitle($scope.title, true);
+				blog.populateSEO(response.data);
 				$scope.post = response.data;
 			}, function( error ) {
 				// on error

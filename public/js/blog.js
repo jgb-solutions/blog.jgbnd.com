@@ -950,8 +950,9 @@ blogApp
 
 		wp.getPost($routeParams.name)
 			.then(function( response ) {
-				$scope.title = (response.data.title);
+				$scope.title = response.data.title;
 				blog.setTitle($scope.title, true);
+				blog.populateSEO(response.data);
 				$scope.post = response.data;
 			}, function( error ) {
 				// on error
@@ -1043,9 +1044,7 @@ blogApp
 		},
 
 		getRealAPIURL: function( apiURL ) {
-			apiURL = apiURL.replace('/api', ''); // remove the API string
-			apiURL = apiURL.replace('?page=', '/'); // remove the '?page=' string and add a '/'
-			return apiURL;
+			return apiURL.replace('/api', '').replace('?page=', '/');
 		},
 
 		paginate: function(response, $scope) {
@@ -1062,8 +1061,8 @@ blogApp
 			this.paginate(response, $scope);
 		},
 
-		getImageSize: function(post, size) {
-			return post.images.sizes[size].file;
+		populateSEO: function(post) {
+			$rootScope.blog.post = post;
 		}
 	}
 }]);
